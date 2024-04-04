@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ShipmentAPI" />
     <orderEntry type="module" module-name="CSVReader" />
+    <orderEntry type="module" module-name="BrazilTaxes" />
   </component>
 </module>
