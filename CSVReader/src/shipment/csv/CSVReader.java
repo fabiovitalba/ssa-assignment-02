@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CSVReader implements ShipmentReader {
-
     @Override
     public List<Shipment> readFile(String filepath) {
         List<Shipment> shipments = new ArrayList<>();
