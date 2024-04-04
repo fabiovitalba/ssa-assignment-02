@@ -5,8 +5,8 @@ public class Main {
         System.out.println("Running...");
 
         double taxOwedCsv = ShipmentFileProcessor.calculate("/Users/fabiovitalba/Development/Java/ssa-assignment-02/example/shipments.csv");
-        double taxOwedXml = ShipmentFileProcessor.calculate("/Users/fabiovitalba/Development/Java/ssa-assignment-02/example/shipments.xml");
+        //double taxOwedXml = ShipmentFileProcessor.calculate("/Users/fabiovitalba/Development/Java/ssa-assignment-02/example/shipments.xml");
         System.out.println("Tax owed CSV: " + taxOwedCsv);
-        System.out.println("Tax owed XML: " + taxOwedXml);
+        //System.out.println("Tax owed XML: " + taxOwedXml);
     }
 }
