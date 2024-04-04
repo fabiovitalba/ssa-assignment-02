@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ShipmentAPI" />
+    <orderEntry type="module" module-name="CSVReader" />
   </component>
 </module>
