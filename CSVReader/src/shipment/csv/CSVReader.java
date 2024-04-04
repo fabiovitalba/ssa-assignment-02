@@ -15,7 +15,7 @@ public class CSVReader implements ShipmentReader {
         List<Shipment> shipments = new ArrayList<>();
 
         try {
-            File myObj = new File("filename.txt");
+            File myObj = new File(filepath);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String csvFileLine = myReader.nextLine();

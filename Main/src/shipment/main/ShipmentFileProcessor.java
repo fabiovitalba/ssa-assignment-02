@@ -13,6 +13,10 @@ public class ShipmentFileProcessor {
     // "A static block in Java is executed when the class is loaded."
     static {
         // We simply look for all implementations of our Interfaces
+
+        // This retrieves implementations of the ShipmentReader interface.
+        // Using the module-dependencies, we assign the ShipmentReader-implementations to our Main Module.
+        // Once the module-dependencies are assigned, the ServiceLoader finds the implementations from the dependencies.
         Iterator<ShipmentReader> shipmentReaderIterator = ServiceLoader.load(ShipmentReader.class).iterator();
         while(shipmentReaderIterator.hasNext()) {
             ShipmentReader sr = shipmentReaderIterator.next();
@@ -27,9 +31,8 @@ public class ShipmentFileProcessor {
     }
 
     public static double calculate(String fileName) {
-        String fileExtension = fileName.substring(fileName.indexOf(".") + 1).toLowerCase();
-        // Alternative used in lab:
-        // String fileExtension = fileName.substring(fileName.indexOf("."),fileName.length() - 1)
+        String fileExtension = returnFileExtension(fileName);
+        System.out.println(fileExtension);
         ShipmentReader sr = readers.get(fileExtension);
         List<Shipment> shipments = sr.readFile(fileName);
         return shipments.stream()
@@ -38,5 +41,10 @@ public class ShipmentFileProcessor {
                     return tc.calculateTax(shipment);
                 })
                 .sum();
+    }
+
+    private static String returnFileExtension(String fileName) {
+        String[] fileTokens = fileName.split("\\.");
+        return fileTokens[fileTokens.length - 1];
     }
 }
