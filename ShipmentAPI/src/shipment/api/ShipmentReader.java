@@ -1,5 +1,8 @@
 package shipment.api;
 
-public interface ShipmentReader {
+import java.util.List;
 
+public interface ShipmentReader {
+    List<Shipment> readFile(String filepath);
+    String getFileType();
 }
