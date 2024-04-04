@@ -8,6 +8,17 @@ public class Shipment {
     private double shipmentPrice;
     private String country;
 
+    public Shipment() {}
+
+    public Shipment(String productName, String productType, int amount, double individualPrice, double shipmentPrice, String country) {
+        this.productName = productName;
+        this.productType = productType;
+        this.amount = amount;
+        this.individualPrice = individualPrice;
+        this.shipmentPrice = shipmentPrice;
+        this.country = country;
+    }
+
     public String getProductName() {
         return productName;
     }
