@@ -6,7 +6,7 @@ public class Main {
 
         double taxOwedCsv = ShipmentFileProcessor.calculate("/Users/fabiovitalba/Development/Java/ssa-assignment-02/example/shipments.csv");
         System.out.println("Tax owed CSV: " + taxOwedCsv);
-        
+
         double taxOwedXml = ShipmentFileProcessor.calculate("/Users/fabiovitalba/Development/Java/ssa-assignment-02/example/shipments.xml");
         System.out.println("Tax owed XML: " + taxOwedXml);
     }
