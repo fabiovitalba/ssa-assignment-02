@@ -1,2 +1,3 @@
 module CSVReader {
+    requires ShipmentAPI;
 }
