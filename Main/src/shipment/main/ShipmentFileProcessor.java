@@ -1,8 +1,6 @@
 package shipment.main;
 
-import shipment.api.Shipment;
-import shipment.api.ShipmentReader;
-import shipment.api.TaxesCalculator;
+import shipment.api.*;
 
 import java.util.*;
 
@@ -20,13 +18,17 @@ public class ShipmentFileProcessor {
         Iterator<ShipmentReader> shipmentReaderIterator = ServiceLoader.load(ShipmentReader.class).iterator();
         while(shipmentReaderIterator.hasNext()) {
             ShipmentReader sr = shipmentReaderIterator.next();
-            readers.put(sr.getFileType(),sr);
+            if (!sr.getClass().isAnnotationPresent(FileType.class))
+                throw new RuntimeException("Class " + sr.getClass() + " needs a " + FileType.class + " annotation.");
+            readers.put(sr.getClass().getAnnotation(FileType.class).fileExtension(),sr);
         }
 
         Iterator<TaxesCalculator> taxesCalculatorIterator = ServiceLoader.load(TaxesCalculator.class).iterator();
         while(taxesCalculatorIterator.hasNext()) {
             TaxesCalculator tc = taxesCalculatorIterator.next();
-            calcs.put(tc.getCountry(),tc);
+            if (!tc.getClass().isAnnotationPresent(Country.class))
+                throw new RuntimeException("Class " + tc.getClass() + " needs a " + Country.class + " annotation.");
+            calcs.put(tc.getClass().getAnnotation(Country.class).country(),tc);
         }
     }
 

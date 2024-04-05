@@ -1,5 +1,6 @@
 package shipment.xml;
 
+import shipment.api.FileType;
 import shipment.api.Shipment;
 import shipment.api.ShipmentReader;
 
@@ -13,6 +14,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+@FileType(fileExtension = "xml")
 public class XMLReader implements ShipmentReader {
     @Override
     public List<Shipment> readFile(String filepath) {
@@ -30,11 +32,6 @@ public class XMLReader implements ShipmentReader {
         }
 
         return shipments;
-    }
-
-    @Override
-    public String getFileType() {
-        return "xml";
     }
 
     private List<Shipment> createShipmentListFromXmlDocument(Document document) {

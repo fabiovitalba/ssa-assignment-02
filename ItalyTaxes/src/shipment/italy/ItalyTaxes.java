@@ -1,8 +1,10 @@
 package shipment.italy;
 
+import shipment.api.Country;
 import shipment.api.Shipment;
 import shipment.api.TaxesCalculator;
 
+@Country(country = "Italy")
 public class ItalyTaxes implements TaxesCalculator {
     @Override
     public double calculateTax(Shipment s) {
@@ -18,10 +20,5 @@ public class ItalyTaxes implements TaxesCalculator {
         }
 
         return  totalTaxAmount;
-    }
-
-    @Override
-    public String getCountry() {
-        return "Italy";
     }
 }

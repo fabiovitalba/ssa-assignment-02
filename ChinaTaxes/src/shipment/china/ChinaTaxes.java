@@ -1,8 +1,10 @@
 package shipment.china;
 
+import shipment.api.Country;
 import shipment.api.Shipment;
 import shipment.api.TaxesCalculator;
 
+@Country(country = "China")
 public class ChinaTaxes implements TaxesCalculator {
     @Override
     public double calculateTax(Shipment s) {
@@ -20,10 +22,5 @@ public class ChinaTaxes implements TaxesCalculator {
             return totalAmount * taxation * 0.8;
         else
             return totalAmount * taxation;
-    }
-
-    @Override
-    public String getCountry() {
-        return "China";
     }
 }

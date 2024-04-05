@@ -1,5 +1,6 @@
 package shipment.csv;
 
+import shipment.api.FileType;
 import shipment.api.Shipment;
 import shipment.api.ShipmentReader;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@FileType(fileExtension = "csv")
 public class CSVReader implements ShipmentReader {
     @Override
     public List<Shipment> readFile(String filepath) {
@@ -32,11 +34,6 @@ public class CSVReader implements ShipmentReader {
         }
 
         return shipments;
-    }
-
-    @Override
-    public String getFileType() {
-        return "csv";
     }
 
     private Shipment newShipmentFromCsvLine(String csvFileLine) {

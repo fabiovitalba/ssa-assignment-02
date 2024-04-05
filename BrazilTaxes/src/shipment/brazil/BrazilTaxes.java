@@ -1,8 +1,10 @@
 package shipment.brazil;
 
+import shipment.api.Country;
 import shipment.api.Shipment;
 import shipment.api.TaxesCalculator;
 
+@Country(country = "Brazil")
 public class BrazilTaxes implements TaxesCalculator {
 
     @Override
@@ -16,10 +18,5 @@ public class BrazilTaxes implements TaxesCalculator {
         } else {
             return totalTaxAmount;
         }
-    }
-
-    @Override
-    public String getCountry() {
-        return "Brazil";
     }
 }
