@@ -25,8 +25,10 @@ public class CSVReader implements ShipmentReader {
             }
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+            // We just throw a RuntimeException to avoid having to deal with the FileNotFoundException directly
+            // A better way of dealing with this could be to add the Exception to the Interface,
+            // but since this is an Assignment we decided to simply throw an exception.
+            throw new RuntimeException(e);
         }
 
         return shipments;

@@ -32,11 +32,14 @@ public class ShipmentFileProcessor {
 
     public static double calculate(String fileName) {
         String fileExtension = returnFileExtension(fileName);
-        System.out.println(fileExtension);
+        if (!readers.containsKey(fileExtension))
+            throw new RuntimeException("No shipment reader for " + fileExtension + " files.");
         ShipmentReader sr = readers.get(fileExtension);
         List<Shipment> shipments = sr.readFile(fileName);
         return shipments.stream()
                 .mapToDouble(shipment -> {
+                    if (!calcs.containsKey(shipment.getCountry()))
+                        System.out.println("No tax calculator for " + shipment.getCountry() + ".");
                     TaxesCalculator tc = calcs.get(shipment.getCountry());
                     return tc.calculateTax(shipment);
                 })
