@@ -15,7 +15,7 @@ XMLReader implementations. However, ChatGPT did not solve the problem and I solv
 all modules in the module-info.java.
 
 -------Additional Comments-------
-[if you have any additional observation or consideration about the lab, you can express it here]
+NONE
 
 -------Points claimed-------
 Basic activity: 3
