@@ -8,10 +8,52 @@ import shipment.china.ChinaTaxes;
 
 public class ChinaTaxesTest {
     @Test
-    public void calculateFoodTaxTest() {
-        Shipment s = new Shipment("apple","FOOD",20,1.0,00.0,"China");
+    public void calculateDefaultTaxTest() {
+        int itemQuantity = 20;
+        double unitPrice = 2.50;
+        double expectedTax = 30.0;
+
+        Shipment s = new Shipment("apple","FOOD",itemQuantity,unitPrice,100.0,"China");
         ChinaTaxes ct = new ChinaTaxes();
-        double calculatedTax = ct.calculateTax(s);
-        assertEquals((20 * 0.3),calculatedTax,0.001);
+        double calculatedTaxAmount = ct.calculateTax(s);
+        assertEquals((itemQuantity * unitPrice) * (expectedTax / 100),calculatedTaxAmount,0.001);
+    }
+
+    @Test
+    public void calculateElectronicTaxTest() {
+        int itemQuantity = 20;
+        double unitPrice = 2.50;
+        double expectedTax = 50.0;
+
+        Shipment s = new Shipment("microprocessor","ELECTRONICS",itemQuantity,unitPrice,100.0,"China");
+        ChinaTaxes ct = new ChinaTaxes();
+        double calculatedTaxAmount = ct.calculateTax(s);
+        assertEquals((itemQuantity * unitPrice) * (expectedTax / 100),calculatedTaxAmount,0.001);
+    }
+
+    @Test
+    public void calculateBulkQuantityTaxTest() {
+        int itemQuantity = 1001;
+        double unitPrice = 2.50;
+        double expectedTax = 30.0;
+
+        Shipment s = new Shipment("apple","FOOD",itemQuantity,unitPrice,100.0,"China");
+        ChinaTaxes ct = new ChinaTaxes();
+        double calculatedTaxAmount = ct.calculateTax(s);
+        double expectedTaxAmount = ((itemQuantity * unitPrice) * (expectedTax / 100)) * 0.8;
+        assertEquals(expectedTaxAmount,calculatedTaxAmount,0.001);
+    }
+
+    @Test
+    public void calculateHighAmountTaxTest() {
+        int itemQuantity = 1;
+        double unitPrice = 100000.1;
+        double expectedTax = 50.0;
+
+        Shipment s = new Shipment("microprocessor","ELECTRONICS",itemQuantity,unitPrice,100.0,"China");
+        ChinaTaxes ct = new ChinaTaxes();
+        double calculatedTaxAmount = ct.calculateTax(s);
+        double expectedTaxAmount = ((itemQuantity * unitPrice) * (expectedTax / 100)) * 0.8;
+        assertEquals(expectedTaxAmount,calculatedTaxAmount,0.001);
     }
 }
