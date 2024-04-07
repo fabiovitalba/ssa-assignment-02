@@ -9,7 +9,7 @@ import shipment.china.ChinaTaxes;
 public class ChinaTaxesTest {
     @Test
     public void calculateDefaultTaxTest() {
-        int itemQuantity = 20;
+        int itemQuantity = 1000;
         double unitPrice = 2.50;
         double expectedTax = 30.0;
 
@@ -21,7 +21,7 @@ public class ChinaTaxesTest {
 
     @Test
     public void calculateElectronicTaxTest() {
-        int itemQuantity = 20;
+        int itemQuantity = 1000;
         double unitPrice = 2.50;
         double expectedTax = 50.0;
 
