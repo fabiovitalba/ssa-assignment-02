@@ -3,10 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BrazilTaxes/BrazilTaxes.iml" filepath="$PROJECT_DIR$/BrazilTaxes/BrazilTaxes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BrazilTaxesTest/BrazilTaxesTest.iml" filepath="$PROJECT_DIR$/BrazilTaxesTest/BrazilTaxesTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/CSVReader/CSVReader.iml" filepath="$PROJECT_DIR$/CSVReader/CSVReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/ChinaTaxes/ChinaTaxes.iml" filepath="$PROJECT_DIR$/ChinaTaxes/ChinaTaxes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChinaTaxesTest/ChinaTaxesTest.iml" filepath="$PROJECT_DIR$/ChinaTaxesTest/ChinaTaxesTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/ItalyTaxes/ItalyTaxes.iml" filepath="$PROJECT_DIR$/ItalyTaxes/ItalyTaxes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ItalyTaxesTest/ItalyTaxesTest.iml" filepath="$PROJECT_DIR$/ItalyTaxesTest/ItalyTaxesTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Main/Main.iml" filepath="$PROJECT_DIR$/Main/Main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MainTest/MainTest.iml" filepath="$PROJECT_DIR$/MainTest/MainTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShipmentAPI/ShipmentAPI.iml" filepath="$PROJECT_DIR$/ShipmentAPI/ShipmentAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/XMLReader/XMLReader.iml" filepath="$PROJECT_DIR$/XMLReader/XMLReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssa-assignment-02.iml" filepath="$PROJECT_DIR$/ssa-assignment-02.iml" />
