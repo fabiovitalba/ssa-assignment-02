@@ -4,10 +4,10 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Running...");
 
-        double taxOwedCsv = ShipmentFileProcessor.calculate("/Users/fabiovitalba/Development/Java/ssa-assignment-02/Main/shipments.csv");
+        double taxOwedCsv = ShipmentFileProcessor.calculate("Main/shipments.csv");
         System.out.println("Tax owed CSV: " + taxOwedCsv);
 
-        double taxOwedXml = ShipmentFileProcessor.calculate("/Users/fabiovitalba/Development/Java/ssa-assignment-02/Main/shipments.xml");
+        double taxOwedXml = ShipmentFileProcessor.calculate("Main/shipments.xml");
         System.out.println("Tax owed XML: " + taxOwedXml);
     }
 }
