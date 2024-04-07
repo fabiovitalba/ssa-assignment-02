@@ -71,14 +71,14 @@ public class ShipmentFileProcessorTest {
 
     @Test
     public void calcCsvExample() {
-        double expectedTaxAmountOwed = 0.0;
+        double expectedTaxAmountOwed = 1.0;
         double taxAmountOwed = ShipmentFileProcessor.calculate(csvFile1);
         assertEquals(expectedTaxAmountOwed,taxAmountOwed,0.001);
     }
 
     @Test
     public void calcXmlExample() {
-        double expectedTaxAmountOwed = 0.0;
+        double expectedTaxAmountOwed = 2200.0;
         double taxAmountOwed = ShipmentFileProcessor.calculate(xmlFile1);
         assertEquals(expectedTaxAmountOwed,taxAmountOwed,0.001);
     }

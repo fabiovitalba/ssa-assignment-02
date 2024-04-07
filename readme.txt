@@ -10,7 +10,9 @@ Testing: I created Unit Tests for the TaxCalculators and an Integration Test for
 NONE
 
 -------AI Usage Declaration-------
-I did not use AI.
+I only used ChatGPT when I was stuck on getting the ShipmentFileProcessorTest-class to see the CSVReader and
+XMLReader implementations. However, ChatGPT did not solve the problem and I solved it by adding the dependency for
+all modules in the module-info.java.
 
 -------Additional Comments-------
 [if you have any additional observation or consideration about the lab, you can express it here]

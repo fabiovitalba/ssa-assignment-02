@@ -40,10 +40,13 @@ public class ShipmentFileProcessor {
         List<Shipment> shipments = sr.readFile(fileName);
         return shipments.stream()
                 .mapToDouble(shipment -> {
-                    if (!calcs.containsKey(shipment.getCountry()))
+                    if (calcs.containsKey(shipment.getCountry())) {
+                        TaxesCalculator tc = calcs.get(shipment.getCountry());
+                        return tc.calculateTax(shipment);
+                    } else {
                         System.out.println("No tax calculator for " + shipment.getCountry() + ".");
-                    TaxesCalculator tc = calcs.get(shipment.getCountry());
-                    return tc.calculateTax(shipment);
+                        return 0;
+                    }
                 })
                 .sum();
     }

@@ -3,4 +3,10 @@ module MainTest {
 
     requires junit;
     requires Main;
+    requires ShipmentAPI;
+    requires CSVReader;
+    requires XMLReader;
+    requires BrazilTaxes;
+    requires ChinaTaxes;
+    requires ItalyTaxes;
 }
