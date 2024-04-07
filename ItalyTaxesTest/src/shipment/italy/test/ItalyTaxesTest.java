@@ -28,7 +28,7 @@ public class ItalyTaxesTest {
         double shipmentCost = 100.0;
         double expectedTax = 30.0;
 
-        Shipment s = new Shipment("wine","ALCOHOL",itemQuantity,unitPrice,shipmentCost,"Italy");
+        Shipment s = new Shipment("wine","FOOD",itemQuantity,unitPrice,shipmentCost,"Italy");
         ItalyTaxes it = new ItalyTaxes();
         double calculatedTaxAmount = it.calculateTax(s);
         double expectedTaxAmount = (itemQuantity * unitPrice) * (expectedTax / 100) + 5;
